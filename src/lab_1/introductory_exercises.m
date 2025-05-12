@@ -3,7 +3,7 @@
 %% 1. Vector and Matrix Creation
 % Create a row vector with elements from 1 to 10
 row_vector = 1:10; %with suprresing printing
-row_vector = 1:10  %with print after declaration
+row_vector = 1:10;  %with print after declaration
 
 % Create a column vector with elements from 10 to 1
 col_vector = (10:-1:1)'
