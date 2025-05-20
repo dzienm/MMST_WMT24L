@@ -77,9 +77,6 @@ movie(gcf, F, 1, 10); % Play the movie once at 10 frames per second
 
 fft3result = fftshift(fftn(Vib));
 
-imagesc(abs(fft3result(:,:,2000)))
-
-
 % Define spatial and temporal increments
 dx = 1.3; % milimeters
 
@@ -106,7 +103,7 @@ avgSpectrum = mean(abs(fft3result), 3);
 
 % Plot the averaged spectrum
 figure;
-imagesc(kx, ky, avgSpectrum);
+imagesc(kx, ky, avgSpectrum');
 colorbar;
 title('Averaged Spectrum over Frequencies');
 xlabel('Wavenumber in x (rad/m)');
@@ -177,7 +174,7 @@ for t = 1:k:numFrames
     % Plot the filtered wavefield
     subplot(1, 2, 2);
     imagesc(filtered_frame);
-    clim([-0.003 0.003]);
+    clim([-0.0015 0.0015]);
     colorbar;
     title(['Filtered Wavefield at Time Index ', num2str(t)]);
     xlabel('Spatial Dimension 1');
